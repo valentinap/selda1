@@ -24,7 +24,8 @@ test <- df[701:1000,]
 
 
 # creiamo il modello predittivo
-mod <- glm(var2 ~ var1, data=train, family=binomial(logit), control = list(maxit = 50))
+mod <- glm(var2 ~ var1, data=train, family=binomial(logit), 
+           control = list(maxit = 50))
 
 # testiamo il modello predittivo sul dataset di test
 pred <- predict(mod, test, 'response')

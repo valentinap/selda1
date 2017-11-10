@@ -7,7 +7,8 @@ iris_train <- iris2[1:100,]
 iris_test <- iris2[101:150,]
 
 
-tune.res <- tune(svm, train.x=iris_train[1:4], train.y=iris_train[,5],kernel='radial', ranges=list(cost=10^(-1:2), gamma=c(.5,1,2)))
+tune.res <- tune(svm, train.x=iris_train[1:4], 
+                 train.y=iris_train[,5],kernel='radial', ranges=list(cost=10^(-1:2), gamma=c(.5,1,2)))
 
 summary(tune.res)
 

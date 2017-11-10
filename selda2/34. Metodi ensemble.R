@@ -27,7 +27,7 @@ summary(adbg)
 
 
 ## utilizziamo il modello predittivo per inferire la classificazione degli item nell'oggetto test
-pred <- predict(adbg, test, type = "class")
+pred1 <- predict(adbg, test, type = "class")
 
 ## se stampiamo pred possiamo visualizzare la matrice di confusione e il tasso di errore
 
@@ -48,10 +48,12 @@ ada_test <- ada(type ~., train, loss = "logistic")
 ada_test
 
 # prediciamo la classe dell'oggetto di test
-pred <- predict(ada_test, test)
+pred2 <- predict(ada_test, test)
 
 # creiamo la matrice di confusione per visualizzare i risultati
 table(pred, test$type)
+
+confusionMatrix(pred, test$type)
 
 # random forest
 
@@ -64,7 +66,7 @@ importance(rf)
 
 varImpPlot(rf)
 
-pred_rf <- predict(rf, test, type = "class")
+pred3 <- predict(rf, test, type = "class")
 
 table(pred_rf, test$type)
 
@@ -73,7 +75,7 @@ table(pred_rf, test$type)
 install.packages('caret')
 library(caret)
 
-confusionMatrix(pred$class, test$type)
+confusionMatrix(pred, test$type)
 
 confusionMatrix(pred2, test$type)
 

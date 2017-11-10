@@ -20,3 +20,4 @@ pred <- predict(nb, test)
 
 # mettiamo a confronto dati effettivi e dati previsti
 table(pred, test$Species)
+confusionMatrix(pred, test$Species)

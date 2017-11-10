@@ -24,6 +24,8 @@ cl <- factor(c(rep("class1",5), rep ("class2", 5)))
 
 test <- c(4,5)
 
+library(class)
+
 knn(train, test, cl, k=1)
 
 summary(knn(train, test, cl, k=1))
@@ -110,6 +112,7 @@ mk <- knn(train = iris_train, test = iris_test, cl = cl_iris_train, k = 12)
 summary(knn(iris_train, iris_test, cl_iris_train, k = 12))
 
 table(mk, cl_iris_test)
+
 
 
 

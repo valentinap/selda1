@@ -2,6 +2,8 @@ install.packages("MASS")
 library(MASS)
 data(Boston)
 
+boston <- read.csv('https://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.data')
+
 
 # utilizziamo solo una parte del dataset per non avere overfitting quando andiamo a predire su un nuovo dataset
 # per utilizzare tutte le variabili come regressori, possiamo usare questo simbolo ~. 

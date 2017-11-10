@@ -73,3 +73,4 @@ table(df3$class, pred1)
 table(df3$class, pred2)
 
 table(df3$class, pred3)
+

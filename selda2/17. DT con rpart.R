@@ -67,6 +67,7 @@ pred <- predict(rpes, test, type = "class")
 
 table(pred, test$type)
 
+confusionMatrix(pred, test$type)
 
 
 

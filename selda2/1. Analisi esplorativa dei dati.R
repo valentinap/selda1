@@ -35,7 +35,7 @@ barplot(trees$Volume)
 # correlazione
 cor(trees)
 
-install.packages("corrplot2")
+install.packages("corrplot")
 library(corrplot)
 
 # salviamo la correlazione in un oggetto a parte e la utilizziamo per creare una matrice di correlazione con la funzione corrplot()

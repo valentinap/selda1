@@ -20,8 +20,10 @@ stud$fres <- str_trim(stud$fres)
 
 
 # possiamo ricodificare la variabile fres in questo modo
+install.packages('plyr')
 library(plyr)
-stud$fres <- revalue(stud$fres, c("0" = "neg", "1" = "pos", "negative" = "neg", "positive" = "pos"))
+stud$fres <- revalue(stud$fres, 
+                     c("0" = "neg", "1" = "pos", "negative" = "neg", "positive" = "pos"))
 
 
 # oppure anche in questo modo
@@ -43,6 +45,7 @@ write.csv(stud, "students.corretto1.csv")
 
 # ripartiamo dal dataset originale, quello con gli errori
 # in questo caso ci interessano in particolare le variabili mark1 e mark1
+install.packages('outliers')
 library(outliers)
 
 stud <- read.csv("students2.csv", sep = ",")

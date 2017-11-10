@@ -18,3 +18,4 @@ tree1 <- tree(type ~., train)
 pred <- predict(tree1, test, type = "class")
 
 table(pred, test$type)
+confusionMatrix(pred, test$type)

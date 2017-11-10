@@ -10,6 +10,9 @@ df2 <- data.frame(x = rnorm(100))
 predict(ml, newdata = df2)
 
 # per creare l’XML, usiamo la funzione pmml() e tra parentesi il nome del modello
+install.packages('pmml')
+library(pmml)
+
 pmml(ml)
 
 save(ml, file = "ml.RData")

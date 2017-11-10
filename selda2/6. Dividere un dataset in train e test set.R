@@ -7,6 +7,9 @@ random <- runif(nrow(iris))
 iris2 <- iris[order(random),]
 
 
+install.packages('caTools')
+library(caTools)
+
 split = sample.split(iris$Species, SplitRatio = 0.7)
 train = subset(iris, split == TRUE)
 test = subset(iris, split == FALSE)
@@ -23,6 +26,9 @@ library(caTools)
 split = sample.split(iris$Species, SplitRatio = 0.7)
 train = subset(iris, split == TRUE)
 test = subset(iris, split == FALSE)
+
+install.packages('caret')
+library(caret)
 
 intrain <- createDataPartition(iris$Species, p=0.75, list=FALSE)
 

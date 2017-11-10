@@ -1,5 +1,5 @@
 # carichiamo il dataset aggiungendo gli argomenti na.strings e strip.white per aggiungere il label NA dove ci sono dati mancanti
-churn <- read.csv("~/R_test/churn.csv", na.strings = "", strip.white = TRUE)
+churn <- read.csv("churn.csv", na.strings = "", strip.white = TRUE)
 
 # vediamo le prime occorrenze e alcuni dati sul dataset
 head(churn)
@@ -45,6 +45,7 @@ clusplot(churn, churn_kmeans$cluster, color=TRUE, shade=TRUE,
 
 
 # creiamo il dendrogramma dei risultati
+install.packages('pvclust')
 library(pvclust)
 churn3 <- pvclust(churn, method.hclust="ward.D", method.dist="euclidean")
 
